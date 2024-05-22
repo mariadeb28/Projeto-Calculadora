@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <title>Calculator</title>
+</head>
+<body>
+    <div>
+        <input class="display">
+        <button class="gray-button" onclick="limparTela()">AC</button>
+        <button class="gray-button" onclick="inverternum()">+/-</button>
+        <button class="blue-button" onclick="adicionarNumeros('/')">/</button>
+        <button class="blue-button" onclick="adicionarNumeros('*')">*</button>
+        <button class="black-button" onclick="adicionarNumeros('7')">7</button>
+        <button class="black-button" onclick="adicionarNumeros('8')">8</button>
+        <button class="black-button" onclick="adicionarNumeros('9')">9</button>
+        <button class="blue-button" onclick="adicionarNumeros('-')">-</button>
+        <button class="black-button" onclick="adicionarNumeros('4')">4</button>
+        <button class="black-button" onclick="adicionarNumeros('5')">5</button>
+        <button class="black-button" onclick="adicionarNumeros('6')">6</button>
+        <button class="blue-button" onclick="adicionarNumeros('+')">+</button>
+        <button class="black-button" onclick="adicionarNumeros('1')">1</button>
+        <button class="black-button" onclick="adicionarNumeros('2')">2</button>
+        <button class="black-button" onclick="adicionarNumeros('3')">3</button>
+        <button class="equal-button igual" onclick="result()">=</button>
+        <button class="black-button zero" onclick="adicionarNumeros('0')">0</button>
+        <button class="black-button" onclick="adicionarNumeros('.')">.</button>
+
+    </div>
+    
+</body>
+<script>
+    function adicionarNumeros(num){
+        const play = document.querySelector(".display").value
+
+        document.querySelector(".display").value = play + num               
+    }
+
+    function limparTela(){
+        document.querySelector(".display").value = ""
+    }
+
+    function result(){
+        const play = document.querySelector(".display").value
+        document.querySelector(".display").value = eval(play)
+
+    }
+
+    function inverternum(){
+        const play = document.querySelector(".display").value
+        document.querySelector(".display").value = play * -1
+
+
+    }
+
+
+</script>
+</html>
